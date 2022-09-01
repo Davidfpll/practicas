@@ -3,11 +3,6 @@ const cors = require('cors');
 require('dotenv').config()
 
 const db = require('./database')
-/* const r_registro = require('./src/rutas/r_registro')
-const r_login = require('./src/rutas/r_login')
-const r_mascotas = require('./src/rutas/r_mascotas')
-const r_imagenes = require('./src/rutas/r_imagenes')
-*/
 
 const app = express()
 
@@ -16,12 +11,6 @@ app.use(express.json())
 app.use(express.urlencoded({
     extended: false
 }))
-
-/* app.use('/api/registro', r_registro)
-app.use('/api/login', r_login)
-app.use('/api/mascotas', r_mascotas)
-app.use('/api/usuarios', r_usuarios)
-app.use('/api/upload', r_imagenes) */
 
 app.use('/usuario', require('./src/routes/r_usuarios'))
 app.use('/alumnos', require('./src/routes/r_alumnos'))
