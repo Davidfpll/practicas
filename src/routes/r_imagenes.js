@@ -7,7 +7,7 @@ const r_imagenes = express.Router()
 const storage = multer.diskStorage({
 	
     destination: (req, file, cb) => {
-        cb(null, process.cwd() +'./archivos/')
+        cb(null, './archivos/')
     },
     filename:  (req, file, cb)=> {
         cb(null, req.params._id+ '.' + file.originalname.split('.')[1])
