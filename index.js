@@ -28,6 +28,7 @@ app.use('/alumnos', require('./src/routes/r_alumnos'))
 app.use('/clase', require('./src/routes/r_clase'))
 app.use('/login', require('./src/routes/r_login'))
 app.use('/entrevistas', require('./src/routes/r_entrevistas'))
+app.use('/imagenes', require('./src/routes/r_imagenes'))
 
 
 db.on('connected', ()=>{

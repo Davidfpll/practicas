@@ -7,7 +7,7 @@ const EsquemaAlumno = new Schema ({
 	nombre: String, 
 	apellidos: [String],
 	clase: ObjectId,
-	foto: Buffer || null,
+	foto: String || null,
 })
 
 const m_alumnos = mongoose.model('alumnos', EsquemaAlumno)

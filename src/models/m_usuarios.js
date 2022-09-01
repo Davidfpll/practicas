@@ -7,6 +7,7 @@ const EsquemaUsuario = new Schema ({
 	nombre: String, 
 	apellidos: [String],
 	rol: String,
+	foto: String || null,
 	clases: [ObjectId] || null,
 	usuario: String, 
 	contrasena: String,

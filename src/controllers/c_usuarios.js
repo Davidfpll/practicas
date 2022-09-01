@@ -22,11 +22,12 @@ const put_usuario = async (req, res)=>{
         nombre,
 		apellidos, 
         usuarios,
-		clases, 
+		clases,
+		foto,
     } = req.body;
 
 	const buscar = { _id: ObjectId(Id) };
-	const cambiar = { nombre, usuarios, apellidos, clases };
+	const cambiar = { nombre, usuarios, apellidos, clases, foto };
 	const opciones = { new: true };
 	const usuario = await m_usuarios.findOneAndUpdate(buscar, cambiar, opciones);
 
@@ -54,6 +55,7 @@ const post_usuario = async (req, res)=>{
 			usuario,
 			rol,
 			clases = null, 
+			foto = null,
 			contrasena
 		} = req.body;
 
@@ -64,6 +66,7 @@ const post_usuario = async (req, res)=>{
 			clases,
 			rol,
 			usuario,
+			foto,
 			contrasena: contrasenaencriptada
 		}).save();
 
