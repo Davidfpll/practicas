@@ -5,7 +5,9 @@ const { crearImagen, deletearchivo, enviarImagen }= require('../controllers/c_im
 const r_imagenes = express.Router()
 
 const storage = multer.diskStorage({
+	
     destination: (req, file, cb) => {
+		console.log(process.cwd())
         cb(null, 'archivos/')
     },
     filename:  (req, file, cb)=> {
