@@ -8,12 +8,20 @@ module.exports = {
         })
     },
 	enviarImagen: async (req,res)=>{
-		const file = await fs.readFile('archivos/'+req.params._id+'.jpg');
-		return res.send(file)
+        try {
+            const file = await fs.readFile('archivos/'+req.params._id+'.jpg');
+            return res.send(file)
+        } catch (error){
+            return res.status(404).send(null)
+        }
 	},	
 	deletearchivo : async (req, res)=>{
-        const file = req.params.archivo
-        const x = await fs.remove('archivos/'+file+'.jpg') 
-		return res.json({eliminado: !x})
+        try {
+            const file = req.params.archivo
+            const x = await fs.remove('archivos/'+file+'.jpg') 
+            return res.json({eliminado: !x})
+        } catch (error){
+            return res.status(404).send({eliminado: false})
+        }
     },
 }
