@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 const EsquemaAlumno = new Schema ({
 	nombre: String, 
 	apellidos: [String],
-	clase: ObjectId,
+	clase: String,
 	foto: String || null,
 })
 
